@@ -1,25 +1,56 @@
-<h1>Listing tasks</h1>
+<h1>ToDO List</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Done</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.done %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<%= simple_form_for @task do |f| %>
+	<%= f.input :done , :as => :hidden,  :input_html => {:value => false }%>
+	<%= f.input :name , :label => false, :placeholder => "What needs to be done?" %>
+	
 <% end %>
-</table>
 
-<br />
+<% unless @tasks.empty? %>
+  <ul style ="list-style-type: none; ">
+    <% @tasks.each do |task| %>
+	  <%= simple_form_for task do |f| %>
+        <li>
+		  <% if task.done == true %>
+		  
+		  
+		  <%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' } , :label => false  %>
+		  
+		   <%= f.button :submit ,  :class => 'hidden'   %>
+		  
+		  <span style="color: rgb(105,105,105); text-decoration: line-through;" class = "name">
+           <%= raw task.name  %></span>
+		  
+			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
+			
+			<% else %>
+		   <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+		   <%= f.button :submit ,  :class => 'hidden'   %>
+		   <span class = "name">
+           <%= raw task.name %>
+		   </span>
+		  
+			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
 
-<%= link_to 'New Task', new_task_path %>
+			<% end %>
+			
+		  </li>
+		 
+		<% end %>
+    <% end %>	  
+  </ul>
+<% end %>
+
+
+<script>
+	$('.box').click(function(event) {
+		$(this).parent().next().click();
+	});
+	$('.name').dblclick(function(event){
+		
+		$(this).style.visibility = "hidden";
+		$('.edit').style.visibility = "visible";
+	});
+</script>
+
