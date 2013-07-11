@@ -25,7 +25,7 @@
 		  
 		  <div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
-		</div>
+		  </div>
 			<% else %>
 		   <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
 		   <%= f.button :submit ,  :class => 'hidden'   %>
@@ -37,11 +37,8 @@
 			<div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
 		   </div>
-
 			<% end %>
-			
 		  </li>
-		 
 		<% end %>
     <% end %>	  
   </ul>
@@ -60,5 +57,3 @@
       $(".edit").hide();  
     });
 </script>
-
-
