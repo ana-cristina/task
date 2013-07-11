@@ -6,7 +6,7 @@
 	<%= f.input :name , :label => false, :placeholder => "What needs to be done?" %>
 	
 <% end %>
-
+<div class = "content">
 <% unless @tasks.empty? %>
   <ul style ="list-style-type: none; ">
     <% @tasks.each do |task| %>
@@ -16,22 +16,27 @@
 		  
 		  
 		  <%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' } , :label => false  %>
+		  <%= f.button :submit ,  :class => 'hidden'   %>
 		  
-		   <%= f.button :submit ,  :class => 'hidden'   %>
+		  <div style="color: rgb(105,105,105); text-decoration: line-through;" class = "name" >
+           <%= raw task.name  %></div>
 		  
-		  <span style="color: rgb(105,105,105); text-decoration: line-through;" class = "name">
-           <%= raw task.name  %></span>
+		  <div class = "edit"><%= f.input :name , :label => false%> </div>
 		  
+		  <div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
-			
+		</div>
 			<% else %>
 		   <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
 		   <%= f.button :submit ,  :class => 'hidden'   %>
-		   <span class = "name">
+		   <div class = "name">
            <%= raw task.name %>
-		   </span>
+		   </div>
+		    <div class = "edit"><%= f.input :name , :label => false%> </div>
 		  
+			<div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
+		   </div>
 
 			<% end %>
 			
@@ -41,16 +46,19 @@
     <% end %>	  
   </ul>
 <% end %>
-
+</div>
 
 <script>
 	$('.box').click(function(event) {
 		$(this).parent().next().click();
 	});
 	$('.name').dblclick(function(event){
-		
-		$(this).style.visibility = "hidden";
-		$('.edit').style.visibility = "visible";
+	  $(this).next().show();
+	  $(this).hide();	
 	});
+	$(document).ready(function(){
+      $(".edit").hide();  
+    });
 </script>
+
 

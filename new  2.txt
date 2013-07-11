@@ -1,0 +1,15 @@
+<%= link_to 'New Task', new_task_path %>
+
+<%= f.button :submit ,  :class => 'hidden' %>
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @task }
+    end
+	
+	 <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+	 
+	 
+	  <span class = "edit" style = "visibility: hidden">
+		   <%= f.input :name %>
+		   </span>
