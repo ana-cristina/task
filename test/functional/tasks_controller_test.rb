@@ -2,18 +2,14 @@ require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
   setup do
-    @task = tasks(:one)
+    @task = tasks(:one)  
+    fake_referer
   end
-
+  
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:tasks)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create task" do
@@ -21,7 +17,7 @@ class TasksControllerTest < ActionController::TestCase
       post :create, task: { done: @task.done, name: @task.name }
     end
 
-    assert_redirected_to task_path(assigns(:task))
+    assert_redirected_to '/tasks'
   end
 
   test "should show task" do
@@ -29,14 +25,9 @@ class TasksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @task
-    assert_response :success
-  end
-
   test "should update task" do
     put :update, id: @task, task: { done: @task.done, name: @task.name }
-    assert_redirected_to task_path(assigns(:task))
+    assert_redirected_back
   end
 
   test "should destroy task" do
@@ -46,4 +37,5 @@ class TasksControllerTest < ActionController::TestCase
 
     assert_redirected_to tasks_path
   end
+ 
 end

@@ -1,0 +1,2 @@
+rails generate model Task name:string done:boolean
+rails generate model Comment task_id:integer body:text 

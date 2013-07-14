@@ -3,12 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .hidden{ display:none; }
 div {
-display: inline
+display: inline;
 }
 .content {
 width: 500px;
+
 }
 .linkx{
 position: absolute;
-left: 400px;
+left: 600px;
+}
+.show{
+position: absolute;
+left: 410px
+}
+.cls{
+width:500px;
+display: block;
+
+}
+.list{
+padding: 10px;
 }

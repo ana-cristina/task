@@ -6,6 +6,11 @@
 	<%= f.input :name , :label => false, :placeholder => "What needs to be done?" %>
 	
 <% end %>
+
+<%= link_to 'All', :method => "index", :sir => "all" %>
+<%= link_to 'Checked', :method => "index", :sir => "checked" %>
+<%= link_to 'Unchecked', :method => "index", :sir => "unchecked"%>
+
 <div class = "content">
 <% unless @tasks.empty? %>
   <ul style ="list-style-type: none; ">
@@ -14,26 +19,33 @@
         <li>
 		  <% if task.done == true %>
 		  
-		  
 		  <%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' } , :label => false  %>
-		  <%= f.button :submit ,  :class => 'hidden'   %>
+		  <%= f.button :submit ,  :class => 'hidden' %>
 		  
 		  <div style="color: rgb(105,105,105); text-decoration: line-through;" class = "name" >
            <%= raw task.name  %></div>
 		  
 		  <div class = "edit"><%= f.input :name , :label => false%> </div>
+
+          <div class = "show" >
+		    <%= link_to "Show: Nr. Comments #{Comment.where(:task_id => task.id).count}", task %>
+		  </div>
 		  
 		  <div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
 		  </div>
+		  
 			<% else %>
-		   <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
+		  
+		  <%= f.input :done ,   :input_html => { :class => 'box'  } , :label => false  %>
 		   <%= f.button :submit ,  :class => 'hidden'   %>
 		   <div class = "name">
            <%= raw task.name %>
 		   </div>
 		    <div class = "edit"><%= f.input :name , :label => false%> </div>
-		  
+		  <div class = "show" >
+		    <%= link_to "Show: Nr. Comments #{Comment.where(:task_id => task.id).count}", task %>
+		  </div>
 			<div class = "linkx">
 			<%= link_to 'X', task , :confirm => 'Are you sure?', :method => :delete %>
 		   </div>

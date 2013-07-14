@@ -10,4 +10,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def fake_referer
+    @request.env['HTTP_REFERER'] = 'http://previous_page'
+  end
+  def assert_redirected_back
+    assert_redirected_to @request.env["HTTP_REFERER"]#'http://previous_page'
+  end
 end

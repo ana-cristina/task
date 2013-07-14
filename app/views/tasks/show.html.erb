@@ -1,0 +1,68 @@
+<%= simple_form_for @task do |f| %>
+	<b>Name:</b>
+	<div  class = "name" >
+		<%= raw @task.name  %>
+	</div>	  
+	<div class = "edit">
+		<%= f.input :name , :label => false%>
+	</div>
+	<p>
+  <b>Done:</b>
+    
+	<%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' } , :label => false  %>
+	<%= @task.done %>
+	<%= f.button :submit ,  :class => 'hidden' %>
+  </p>
+
+<% end %>
+<h1> Comments </h1>
+<%= simple_form_for @comment do |f| %>
+  <p>
+  <%= f.button :submit, "Comment" %>
+  </p>
+  <%= f.input :body, :label => false %>
+  <%= f.input :task_id , :as => :hidden,  :input_html => {:value => @task.id }%>
+<% end %>
+<h3> Comments </h3>
+<% @nr =0 %>
+<% unless @comments.empty? %>
+  <ul style ="list-style-type: none; ">
+    <% @comments.each do |comment| %>
+	  <%= simple_form_for comment do |f| %>
+		<% @nr += 1 %>
+		  Comment Nr. <%= @nr %>
+	    <li class = "list"> 
+
+		  <div  class = "name">
+	       <div class = "cls">
+   		    <%= raw comment.body %> 
+		   </div>
+		    <div class = "linkx">
+			  <%= link_to 'X', comment , :confirm => 'Are you sure?', :method => :delete %>
+		    </div>
+ 	      </div>	  
+	      <div class = "edit">
+	    	<%= f.input :body , :label => false%>
+			<%= f.button :submit, "Comment" %>
+	      </div>
+		</li>
+	  <% end %>	
+    <% end %>	  
+  </ul>
+<% end %>
+
+
+<%= link_to 'Back', tasks_path %>
+
+<script>
+	$('.box').click(function(event) {
+		$(this).parent().next().click();
+	});
+	$('.name').dblclick(function(event){
+	  $(this).next().show();
+	  $(this).hide();	
+	});
+	$(document).ready(function(){
+      $(".edit").hide();  
+    });
+</script>
