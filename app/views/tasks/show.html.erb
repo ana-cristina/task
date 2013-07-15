@@ -1,3 +1,5 @@
+<%= link_to 'Back', tasks_path %>
+
 <%= simple_form_for @task do |f| %>
 	<b>Name:</b>
 	<div  class = "name" >
@@ -7,13 +9,13 @@
 		<%= f.input :name , :label => false%>
 	</div>
 	<p>
-  <b>Done:</b>
     
-	<%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' } , :label => false  %>
-	<%= @task.done %>
+	<%= f.input :done ,   :input_html => { :class => 'box', :display => 'inline' }  %>
+
 	<%= f.button :submit ,  :class => 'hidden' %>
   </p>
-
+<%= link_to 'Delete', @task , :confirm => 'Are you sure?', :method => :delete %>
+		  
 <% end %>
 <h1> Comments </h1>
 <%= simple_form_for @comment do |f| %>

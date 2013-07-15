@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
   setup do
-    @task = tasks(:one)  
+    @task = tasks (:one)
     fake_referer
   end
   
@@ -13,11 +13,14 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should create task" do
+    @task = Task.new
+    @task.name = "MyString3"
+	@task.done = false
     assert_difference('Task.count') do
       post :create, task: { done: @task.done, name: @task.name }
     end
 
-    assert_redirected_to '/tasks'
+   assert_redirected_back
   end
 
   test "should show task" do

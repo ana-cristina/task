@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskApp</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/tasks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<script src="/assets/tasks.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" name="csrf-token" />
+</head>
+<body>
+
+<a href="/tasks">Back</a>
+
+<form accept-charset="UTF-8" action="/tasks/8" class="simple_form edit_task" id="edit_task_8" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+	<b>Name:</b>
+	<div  class = "name" >
+		task99
+	</div>	  
+	<div class = "edit">
+		<div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="task99" /></div>
+	</div>
+	<p>
+    
+	<div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input checked="checked" class="boolean optional box" display="inline" id="task_done" name="task[done]" type="checkbox" value="1" /><label class="boolean optional" for="task_done">Done</label></div>
+
+	<input class="button hidden" name="commit" type="submit" value="Update Task" />
+  </p>
+
+</form><h1> Comments </h1>
+<form accept-charset="UTF-8" action="/comments" class="simple_form new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+  <p>
+  <input class="button" name="commit" type="submit" value="Comment" />
+  </p>
+  <div class="input text required"><textarea class="text required" cols="40" id="comment_body" name="comment[body]" required="required" rows="20">
+</textarea></div>
+  <div class="input hidden"><input class="hidden" id="comment_task_id" name="comment[task_id]" type="hidden" value="8" /></div>
+</form><h3> Comments </h3>
+  <ul style ="list-style-type: none; ">
+	  <form accept-charset="UTF-8" action="/comments/2" class="simple_form edit_comment" id="edit_comment_2" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+		  Comment Nr. 1
+	    <li class = "list"> 
+
+		  <div  class = "name">
+	       <div class = "cls">
+   		    The Comments box is a social plugin that enables people to comment on your site. Features include moderation tools and distribution. PP
+
+Social Relevance: The Comments box uses social signals to surface the highest quality comments. Comments are ordered to display the most relevant comments from friends and friends of friends as well as the most-liked or active discussion threads. Comments marked as spam are hidden from view.
+
+Distribution: Comments are easily shared with friends or with people who like your Page on Facebook. If people leave the “Post to Facebook” box checked when they post a comment, a story appears on their friends’ news feed indicating that they've made a comment on your website, which will also link back to your site.
+
+Friends and people who like the Page can then respond to the discussion by liking or replying to the comment directly in the news feed or in the Comments box on your site. Threads stay synchronized across Facebook and on the Comments box on your site regardless of where the comment was made. 
+		   </div>
+		    <div class = "linkx">
+			  <a href="/comments/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		    </div>
+ 	      </div>	  
+	      <div class = "edit">
+	    	<div class="input text required"><textarea class="text required" cols="40" id="comment_body" name="comment[body]" required="required" rows="20">
+The Comments box is a social plugin that enables people to comment on your site. Features include moderation tools and distribution. PP
+
+Social Relevance: The Comments box uses social signals to surface the highest quality comments. Comments are ordered to display the most relevant comments from friends and friends of friends as well as the most-liked or active discussion threads. Comments marked as spam are hidden from view.
+
+Distribution: Comments are easily shared with friends or with people who like your Page on Facebook. If people leave the “Post to Facebook” box checked when they post a comment, a story appears on their friends’ news feed indicating that they&#x27;ve made a comment on your website, which will also link back to your site.
+
+Friends and people who like the Page can then respond to the discussion by liking or replying to the comment directly in the news feed or in the Comments box on your site. Threads stay synchronized across Facebook and on the Comments box on your site regardless of where the comment was made.</textarea></div>
+			<input class="button" name="commit" type="submit" value="Comment" />
+	      </div>
+		</li>
+</form>	  <form accept-charset="UTF-8" action="/comments/4" class="simple_form edit_comment" id="edit_comment_4" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+		  Comment Nr. 2
+	    <li class = "list"> 
+
+		  <div  class = "name">
+	       <div class = "cls">
+   		    The CSS list properties allow you to:
+
+Set different list item markers for ordered lists
+Set different list item markers for unordered lists
+Set an image as the list item marker
+
+List
+In HTML, there are two types of lists:
+
+unordered lists - the list items are marked with bullets
+ordered lists - the list items are marked with numbers or letters
+With CSS, lists can be styled further, and images can be used as the list item marker. 
+		   </div>
+		    <div class = "linkx">
+			  <a href="/comments/4" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		    </div>
+ 	      </div>	  
+	      <div class = "edit">
+	    	<div class="input text required"><textarea class="text required" cols="40" id="comment_body" name="comment[body]" required="required" rows="20">
+The CSS list properties allow you to:
+
+Set different list item markers for ordered lists
+Set different list item markers for unordered lists
+Set an image as the list item marker
+
+List
+In HTML, there are two types of lists:
+
+unordered lists - the list items are marked with bullets
+ordered lists - the list items are marked with numbers or letters
+With CSS, lists can be styled further, and images can be used as the list item marker.</textarea></div>
+			<input class="button" name="commit" type="submit" value="Comment" />
+	      </div>
+		</li>
+</form>	  <form accept-charset="UTF-8" action="/comments/7" class="simple_form edit_comment" id="edit_comment_7" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+		  Comment Nr. 3
+	    <li class = "list"> 
+
+		  <div  class = "name">
+	       <div class = "cls">
+   		    scasvcas 
+		   </div>
+		    <div class = "linkx">
+			  <a href="/comments/7" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		    </div>
+ 	      </div>	  
+	      <div class = "edit">
+	    	<div class="input text required"><textarea class="text required" cols="40" id="comment_body" name="comment[body]" required="required" rows="20">
+scasvcas</textarea></div>
+			<input class="button" name="commit" type="submit" value="Comment" />
+	      </div>
+		</li>
+</form>  </ul>
+
+
+<a href="/tasks">Back</a>
+
+<script>
+	$('.box').click(function(event) {
+		$(this).parent().next().click();
+	});
+	$('.name').dblclick(function(event){
+	  $(this).next().show();
+	  $(this).hide();	
+	});
+	$(document).ready(function(){
+      $(".edit").hide();  
+    });
+</script>
+
+</body>
+</html>

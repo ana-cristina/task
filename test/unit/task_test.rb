@@ -6,5 +6,11 @@ class TaskTest < ActiveSupport::TestCase
     assert !task.save
 	assert !task.errors[:name].empty?
   end  
-
+  test "a task should have a unique name" do
+    task = Task.new
+	task.name = "MyString"
+	task.done = false
+	assert !task.save
+	assert !task.errors[:name].empty?
+  end
 end

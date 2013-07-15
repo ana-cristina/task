@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
+  caches_page :index
+  caches_page :show
+  cache_sweeper :task_sweeper, :only => [:create, :update, :destroy]
+  cache_sweeper :comment_sweeper, :only => [:create, :update, :destroy]
   # GET /tasks
   def index
+    
 	@done = Task.where(:done => true)
     @todo = Task.where(:done => false)
 	@task = Task.new
@@ -23,20 +28,27 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     @task = Task.new(params[:task])
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to '/tasks'}
-      end
+    if !@task.save
+	  @notice =  @task.errors[:name][0]
+	else
+	  @notice = "Task was successfully created"
+	end
+	respond_to do |format|
+        format.html { redirect_to :back}
     end
   end
 
   # PUT /tasks/1
   def update
     @task = Task.find(params[:id])
+	if !@task.update_attributes(params[:task])
+	    @notice =  @task.errors[:name][0]
+	else
+	    @notice = "Task was successfully updated"
+	end
+	
     respond_to do |format|
-      if @task.update_attributes(params[:task])
-        format.html { redirect_to :back}
-      end
+      format.html { redirect_to :back}
     end
   end
 
@@ -45,7 +57,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url }
+      format.html { redirect_to "/tasks" }
     end
   end
   # GET /tasks/1

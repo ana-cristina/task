@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskApp</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/tasks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<script src="/assets/tasks.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" name="csrf-token" />
+</head>
+<body>
+
+<p id="notice"></p>
+<h1>ToDO List</h1>
+
+
+<form accept-charset="UTF-8" action="/tasks" class="simple_form new_task" id="new_task" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+	<div class="input hidden"><input class="hidden" id="task_done" name="task[done]" type="hidden" value="false" /></div>
+	<div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" placeholder="What needs to be done?" required="required" size="50" type="text" /></div>
+	
+</form>
+<a href="/tasks?method=index&amp;sir=all">All</a>
+<a href="/tasks?method=index&amp;sir=checked">Checked</a>
+<a href="/tasks?method=index&amp;sir=unchecked">Unchecked</a>
+
+<div class = "content">
+  <ul style ="list-style-type: none; ">
+	  <form accept-charset="UTF-8" action="/tasks/8" class="simple_form edit_task" id="edit_task_8" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+        <li>
+		  
+		  <div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input checked="checked" class="boolean optional box" display="inline" id="task_done" name="task[done]" type="checkbox" value="1" /></div>
+		  <input class="button hidden" name="commit" type="submit" value="Update Task" />
+		  
+		  <div style="color: rgb(105,105,105); text-decoration: line-through;" class = "name" >
+           task99</div>
+		  
+		  <div class = "edit"><div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="task99" /></div> </div>
+
+          <div class = "show" >
+		    <a href="/tasks/8">Show: Nr. Comments 3</a>
+		  </div>
+		  
+		  <div class = "linkx">
+			<a href="/tasks/8" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		  </div>
+		  
+		  </li>
+</form>	  <form accept-charset="UTF-8" action="/tasks/15" class="simple_form edit_task" id="edit_task_15" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+        <li>
+		  
+		  <div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input class="boolean optional box" id="task_done" name="task[done]" type="checkbox" value="1" /></div>
+		   <input class="button hidden" name="commit" type="submit" value="Update Task" />
+		   <div class = "name">
+           task5
+		   </div>
+		    <div class = "edit"><div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="task5" /></div> </div>
+		  <div class = "show" >
+		    <a href="/tasks/15">Show: Nr. Comments 1</a>
+		  </div>
+			<div class = "linkx">
+			<a href="/tasks/15" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		   </div>
+		  </li>
+</form>	  <form accept-charset="UTF-8" action="/tasks/21" class="simple_form edit_task" id="edit_task_21" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+        <li>
+		  
+		  <div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input checked="checked" class="boolean optional box" display="inline" id="task_done" name="task[done]" type="checkbox" value="1" /></div>
+		  <input class="button hidden" name="commit" type="submit" value="Update Task" />
+		  
+		  <div style="color: rgb(105,105,105); text-decoration: line-through;" class = "name" >
+           task0</div>
+		  
+		  <div class = "edit"><div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="task0" /></div> </div>
+
+          <div class = "show" >
+		    <a href="/tasks/21">Show: Nr. Comments 0</a>
+		  </div>
+		  
+		  <div class = "linkx">
+			<a href="/tasks/21" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		  </div>
+		  
+		  </li>
+</form>	  <form accept-charset="UTF-8" action="/tasks/23" class="simple_form edit_task" id="edit_task_23" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+        <li>
+		  
+		  <div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input class="boolean optional box" id="task_done" name="task[done]" type="checkbox" value="1" /></div>
+		   <input class="button hidden" name="commit" type="submit" value="Update Task" />
+		   <div class = "name">
+           ttask
+		   </div>
+		    <div class = "edit"><div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="ttask" /></div> </div>
+		  <div class = "show" >
+		    <a href="/tasks/23">Show: Nr. Comments 0</a>
+		  </div>
+			<div class = "linkx">
+			<a href="/tasks/23" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		   </div>
+		  </li>
+</form>	  <form accept-charset="UTF-8" action="/tasks/25" class="simple_form edit_task" id="edit_task_25" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="wsbw55DlrgG96rAz17Jxkcf51pzsP776z6uRRaalD8M=" /></div>
+        <li>
+		  
+		  <div class="input boolean optional"><input name="task[done]" type="hidden" value="0" /><input class="boolean optional box" id="task_done" name="task[done]" type="checkbox" value="1" /></div>
+		   <input class="button hidden" name="commit" type="submit" value="Update Task" />
+		   <div class = "name">
+           task6
+		   </div>
+		    <div class = "edit"><div class="input string required"><input class="string required" id="task_name" maxlength="255" name="task[name]" required="required" size="50" type="text" value="task6" /></div> </div>
+		  <div class = "show" >
+		    <a href="/tasks/25">Show: Nr. Comments 0</a>
+		  </div>
+			<div class = "linkx">
+			<a href="/tasks/25" data-confirm="Are you sure?" data-method="delete" rel="nofollow">X</a>
+		   </div>
+		  </li>
+</form>  </ul>
+</div>
+
+<script>
+	$('.box').click(function(event) {
+		$(this).parent().next().click();
+	});
+	$('.name').dblclick(function(event){
+	  $(this).next().show();
+	  $(this).hide();	
+	});
+	$(document).ready(function(){
+      $(".edit").hide();  
+    });
+</script>
+
+</body>
+</html>

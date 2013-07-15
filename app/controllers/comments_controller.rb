@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  cache_sweeper :comment_sweeper, :only => [:create, :update, :destroy]
 # POST /comment
   def create
     @comment = Comment.new(params[:comment])
